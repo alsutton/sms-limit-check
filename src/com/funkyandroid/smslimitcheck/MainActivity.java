@@ -14,21 +14,21 @@ public class MainActivity extends Activity {
     public static final String SMS_OUTGOING_CHECK_MAX_COUNT = "sms_outgoing_check_max_count";
 
     /** Default checking period for SMS sent without user permission. */
-    private static final int DEFAULT_SMS_CHECK_PERIOD = 1800000;    // 30 minutes
+    private static final int DEFAULT_SMS_CHECK_PERIOD = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) ? 1800000 : 3600000;
 
     /** Default number of SMS sent in checking period without user permission. */
-    private static final int DEFAULT_SMS_MAX_COUNT = 30;
+    private static final int DEFAULT_SMS_MAX_COUNT = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) ? 30 : 100;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+/*        
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
         	((TextView)findViewById(R.id.limitText)).setText(R.string.too_early);
         	return;
         }
-        
+*/        
         
         ContentResolver resolver = getContentResolver();
 

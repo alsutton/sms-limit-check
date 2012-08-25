@@ -6,8 +6,9 @@
    	<string name="developed_by">Developed by Funky Android</string>
    	<string name="funky_android_web">http://www.funkyandroid.com/</string>
    	<string name="too_early">Your phone runs a version of Android which is not SMS limited by default</string>
-   	<string name="limit">The limit for this device is should be %sms SMSes in %min minutes</string>
-   	<string name="guess_time">(The time period was guessed using the stock Android default)</string>
+   	<string name="limit_is">The limit for this device is be %sms SMSes in %min minutes</string>
+   	<string name="limit_should">The limit for this device should be %sms SMSes in %min minutes</string>
+   		<string name="guess_time">(The time period was guessed using the stock Android default)</string>
    	<string name="guess_rate">(The number of SMSes was guessed using the stock Android default)</string>
    	<string name="guess_time_and_rate">(The time period and number of SMSes was guessed using the stock Android default)</string>
 </resources>

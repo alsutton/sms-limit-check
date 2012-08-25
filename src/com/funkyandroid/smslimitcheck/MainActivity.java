@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.provider.Settings;
@@ -53,16 +52,15 @@ public class MainActivity extends Activity {
         
         checkPeriod /= 1000 * 60;
         
-        String text = getText(R.string.limit).toString();
+        int limitId = R.string.limit_is;
+        if(guessView.getVisibility() == View.VISIBLE) {
+        	limitId = R.string.limit_should;
+        }
+        
+        String text = getText(limitId).toString();
         text = text.replace("%sms", Integer.toString(maxAllowed));
         text = text.replace("%min", Integer.toString(checkPeriod));
         
         ((TextView)findViewById(R.id.limitText)).setText(text);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
     }
 }
